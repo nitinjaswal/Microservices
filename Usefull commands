@@ -1,0 +1,12 @@
+
+-dotnet build:Build dot net project with command line
+-dotnet --version: checks current version
+-dotnet new webapi -n PlatformService (Will create new scaffolding project)
+-dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+-dotnet add package Microsoft.EntityFrameworkCore
+-dotnet add package Microsoft.EntityFrameworkCore.Design
+-dotnet add package Microsoft.EntityFrameworkCore.InMemory
+-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+//VS code shortcuts
+-ctrl+shift+~: open terminal
