@@ -12,3 +12,13 @@
 //VS code shortcuts
 -ctrl+shift+~: open terminal
 -ctrl+b: toggle directory(folder) explorer
+
+//Docker
+--docker --version
+--docker build -t jaswalnitin/platformservice .: It will create docker image
+--docker run -p 8080:80 -d  jaswalnitin/platformservice: run the image in docker new container
+--docker ps:show running container
+--docker stop <containerid>: stop the container
+--docker start <containerid>: restart existing container
+--docker login: authenticate docker hub with
+--docker push jaswalnitin/platformservice: is used to push or share a local Docker image or a repository to a central repository
