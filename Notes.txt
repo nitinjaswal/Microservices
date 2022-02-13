@@ -1,0 +1,7 @@
+Why DTO - We need some way to abstract our internal data with external data
+- Exposing data models is not good for privacy, 
+- Contractual coupling: If there is any change in model , client may get affected
+- We put data on DTO , which we want to expose to consumer
+
+Automaper is used to map DTOs with models
+-No need to define mapping while creating profile if properties are same

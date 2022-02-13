@@ -18,7 +18,7 @@ if (builder.Environment.IsDevelopment())
 
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 PrepDb.PrepPopulation(app);
