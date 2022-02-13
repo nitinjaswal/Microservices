@@ -19,8 +19,9 @@ if (builder.Environment.IsDevelopment())
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 
-var app = builder.Build();
 
+var app = builder.Build();
+PrepDb.PrepPopulation(app);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

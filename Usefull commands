@@ -1,5 +1,6 @@
 
 -dotnet build:Build dot net project with command line
+-dotnet run: run project
 -dotnet --version: checks current version
 -dotnet new webapi -n PlatformService (Will create new scaffolding project)
 -dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
