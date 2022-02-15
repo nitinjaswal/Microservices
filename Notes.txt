@@ -5,3 +5,16 @@ Why DTO - We need some way to abstract our internal data with external data
 
 Automaper is used to map DTOs with models
 -No need to define mapping while creating profile if properties are same
+
+//Kubernetes
+-- Built by google and now maintained by Cloud Native Foundation
+-- Often referred to as "K8S"
+-- is like container orchestrator
+--2 broad use profiles
+  Developer
+  Administrator
+
+
+Pod is used to host containers and single pod can run multiple containers
+
+1)Deploy platform service and pod

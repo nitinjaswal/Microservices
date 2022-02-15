@@ -22,3 +22,9 @@
 --docker start <containerid>: restart existing container
 --docker login: authenticate docker hub with
 --docker push jaswalnitin/platformservice: is used to push or share a local Docker image or a repository to a central repository
+
+//kubernetes
+--kubectl version :  
+--kubectl apply -f platforms-depl.yaml: Create deployment file and deployment
+--kubectl get deployments: Check deployment files
+--kubectl get pods: check pods
