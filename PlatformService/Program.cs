@@ -12,20 +12,21 @@ builder.Services.AddSwaggerGen();
 
 if (builder.Environment.IsDevelopment())
 {
+    Console.WriteLine("---> Using in memory--->Development");
     builder.Services.AddDbContext<AppDbContext>(options =>
            options.UseInMemoryDatabase("InMemoryDatabase"));
 }
+
 
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
-PrepDb.PrepPopulation(app);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -36,4 +37,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+PrepDb.PrepPopulation(app);
 app.Run();
+
+

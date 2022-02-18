@@ -1,3 +1,4 @@
+using PlatformService.Models;
 namespace PlatformService.Data
 {
     public static class PrepDb
@@ -9,37 +10,23 @@ namespace PlatformService.Data
                 SeedData(serviceScope.ServiceProvider.GetService<AppDbContext>());
             }
         }
-
+        
         private static void SeedData(AppDbContext context)
         {
-            if (!context.Platforms.Any())
+             if(!context.Platforms.Any())
             {
-                Console.WriteLine("--> Seeding Data...");
-                context.Platforms.AddRange(
-                    new Models.Platform()
-                    {
-                        Name = "DotNet",
-                        Publisher = "Microsoft",
-                        Cost = "Free"
-                    },
-                          new Models.Platform()
-                          {
-                              Name = "Sql Server Express",
-                              Publisher = "Microsoft",
-                              Cost = "Free"
-                          },
-                          new Models.Platform()
-                          {
-                              Name = "Kubernetes",
-                              Publisher = "Cloud Native Computing Foundation",
-                              Cost = "Free"
-                          }
-                );
+                Console.WriteLine("Seeding data.");
+                var list = new List<Platform>();
+                list.Add(new Platform { Name = "Dotnet", Publisher = "Microsoft", Cost = "Free"} );
+                list.Add(new Platform { Name = "Sql Server Express", Publisher = "Microsoft", Cost = "Free"} );
+                list.Add(new Platform { Name = "Kubernetes", Publisher = "Cloud Native Computing Foundation", Cost = "Free"} );
+
+                context.Platforms.AddRange(list);
                 context.SaveChanges();
             }
             else
             {
-                Console.WriteLine("--> We already have data");
+                Console.WriteLine("----> We already have data.");
             }
         }
     }
