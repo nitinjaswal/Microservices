@@ -28,3 +28,4 @@
 --kubectl apply -f platforms-depl.yaml: Create deployment file and deployment
 --kubectl get deployments: Check deployment files
 --kubectl get pods: check pods
+--kubectl get services: 
