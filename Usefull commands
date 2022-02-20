@@ -32,3 +32,4 @@
 --kubectl rollout restart deployment platforms-depl: restart pod and get latest image
 --kubectl get pods --namespace=ingress-nginx: check pods and its associated namespace
 --kubectl get services --namespace=ingress-nginx: check load balancer for service
+--kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55w0rd!": Create secret
