@@ -18,3 +18,6 @@ Automaper is used to map DTOs with models
 Pod is used to host containers and single pod can run multiple containers
 
 1)Deploy platform service and pod
+
+Nginx:
+-is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache

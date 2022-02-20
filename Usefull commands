@@ -29,3 +29,6 @@
 --kubectl get deployments: Check deployment files
 --kubectl get pods: check pods
 --kubectl get services: 
+--kubectl rollout restart deployment platforms-depl: restart pod and get latest image
+--kubectl get pods --namespace=ingress-nginx: check pods and its associated namespace
+--kubectl get services --namespace=ingress-nginx: check load balancer for service
