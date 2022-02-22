@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 if (builder.Environment.IsProduction())
 {
-    Console.WriteLine("---> Using Sql Server--->Production");
+    Console.WriteLine("---> Using Sql Server--->DB");
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 }
@@ -24,6 +24,9 @@ else
            options.UseInMemoryDatabase("InMemoryDatabase"));
 }
 
+  Console.WriteLine("---> Using Sql Server--->DB");
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
 
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
