@@ -11,9 +11,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-Console.WriteLine("---> Using in memory--->Development");
-builder.Services.AddDbContext<AppDbContext>(options =>
-       options.UseInMemoryDatabase("InMemoryDatabase"));
+if (builder.Environment.IsProduction())
+{
+    Console.WriteLine("---> Using Sql Server--->Production");
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+}
+else
+{
+    Console.WriteLine("---> Using in memory--->Development");
+    builder.Services.AddDbContext<AppDbContext>(options =>
+           options.UseInMemoryDatabase("InMemoryDatabase"));
+}
+
 
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
@@ -35,7 +45,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrepDb.PrepPopulation(app);
+PrepDb.PrepPopulation(app,app.Environment.IsProduction());
 
 ConfigurationManager configuration = builder.Configuration;
 
