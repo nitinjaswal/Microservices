@@ -1,5 +1,7 @@
 using PlatformService.Data;
 using Microsoft.EntityFrameworkCore;
+using PlatformService.AsyncDataServices;
+
 using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,13 +26,10 @@ else
            options.UseInMemoryDatabase("InMemoryDatabase"));
 }
 
-  Console.WriteLine("---> Using Sql Server--->DB");
-    builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
-
 //Registering IPlatform dependency
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();

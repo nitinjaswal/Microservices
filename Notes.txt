@@ -21,3 +21,11 @@ Pod is used to host containers and single pod can run multiple containers
 
 Nginx:
 -is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache
+
+RabbitMQ
+- A message broker - it accepts and forward messages
+- messages are sent by producers(Publishers)
+- Messages are received by Consumers (or Subscribers)
+- Messages are stored in Queues(a message buffer)
+- Exchanges can be used to add "routing" functionality
+- Uses Advanced message Queuing Protocol (AMQP) and others
