@@ -23,7 +23,7 @@ namespace CommandsService.Controllers
         {
             Console.WriteLine("---> Getting Platforms from CommandsService.");
 
-            var platformItems = _repository.GetAllPlatforms();
+            var platformItems = _repository.  (456);
 
             return Ok(_mapper.Map<IEnumerable<PlatformReadDto>>(platformItems));
         } 

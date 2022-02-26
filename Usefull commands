@@ -36,3 +36,9 @@
 
 //RabbitMQ
 --dotnet add package RabbitMQ.Client: add client
+
+//grpc
+--dotnet add package Grpc.AspNetCore: // add grpc server
+--dotnet add package Grpc.Tools : //add client
+--dotnet add package Grpc.Net.Client
+--dotnet add package Google.Protobuf
