@@ -9,7 +9,7 @@ service GrpcPlatform {
 message GetAllRequest {}
 
 message GrpcPlatformModel {
-    int32 platformId = 1; 
+    int32 platformId = 1;
     string name = 2;
     string publisher = 3;
 }
